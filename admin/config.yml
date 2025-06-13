@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: your-org/your-repo # Replace with your GitHub organization/repository
+  branch: main # Branch to update (defaults to master if omitted)
+
+media_folder: "static/images/uploads" # Where uploaded files are saved in the repo
+public_folder: "/images/uploads" # Path for published site image URLs
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog" # Folder where blog posts are stored
+    create: true # Allow creating new posts
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
