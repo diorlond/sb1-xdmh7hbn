@@ -2,11 +2,3 @@
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
-
-[context.production.environment]
-  CMS_ENVIRONMENT = "production"
-  DECAP_CMS_ENABLED = true
-
-[context.develop.environment]
-  CMS_ENVIRONMENT = "develop"
-  DECAP_CMS_ENABLED = true
