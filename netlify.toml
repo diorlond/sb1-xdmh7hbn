@@ -1,5 +1,17 @@
+[build]
+  command = "npm run build" # Adjust based on your static site generator (e.g., "jekyll build" for Jekyll, "hugo" for Hugo)
+  publish = "public" # Directory where the built site is output (e.g., "_site" for Jekyll, "dist" for Gatsby)
+  environment = { NODE_VERSION = "18" } # Specify Node.js version for consistency
+
 [[redirects]]
-from = "/*"
-"/index.html"
-status = 200
-force = true
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[context.production.environment]
+  CMS_ENVIRONMENT = "production"
+  DECAP_CMS_ENABLED = true
+
+[context.develop.environment]
+  CMS_ENVIRONMENT = "develop"
+  DECAP_CMS_ENABLED = true
